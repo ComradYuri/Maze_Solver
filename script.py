@@ -3,10 +3,14 @@ import mazes
 
 
 def escape(maze):
-    # 1. finds player orientation, player coords, and target coords.    lines: 13-22, 126-137
-    # 2. uses bread first search to construct a path.                   lines: 23-37, 102-123
-    # 3. construct a move set from the coords in path.                  lines: 38-101
-    print("\nMaze that has to be solved:\n")
+    # 1. finds player orientation, player coords, and target coords.    lines: 17-26, 131-142
+    # 2. uses bread first search to construct a path.                   lines: 27-41, 106-128
+    # 3. construct a move set from the coords in path.                  lines: 42-105
+    print("\n------------------------------------------------------------------------\
+------------------------------------------------------------------------------------\
+----------------------------------------------------------------------------------\
+-----------------------------------------------------------------------------------\
+----------------------------------------------------------------------------\nMaze that has to be solved:\n")
     for row in maze:
         print(row)
     print("\n\n")
@@ -101,6 +105,7 @@ B = turn around 180 degrees
                         return moves
                     else:
                         bfs_queue.append([locs[i], path + [locs[i]]])
+    print("Maze is not solvable\n\n")
     return []
 
 
@@ -137,5 +142,7 @@ def get_targetvalues(maze):
     return targets
 
 
+
 escape(mazes.maze15)
+escape(mazes.maze10)
 escape(mazes.maze24)
